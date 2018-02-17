@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My Life With LambdaPad</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tales of daily life using the amazing LambdaPad for my every site generating need.">
+    <meta name="author" content="">
+    <link href="../assets/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="../assets/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <div class="masthead">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="container">
+                  <ul class="nav">
+                    <li class="active"><a href="../index.html">Home</a></li>
+                    <li><a href="../posts/index.html">Posts</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div><!-- /.navbar -->
+          </div>
+
+          <div class="body">
+          
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <h1>My First Impressions Of LambdaPad</h1>
+      <p class="post-info">
+        2014-08-09 by Stan The Martian
+      </p>
+      <p>Having used LambdaPad for my awesome blog, here is my first impression.</p>
+
+<p>The good:</p>
+
+<ul>
+<li>It&#8217;s explicit - very little magic</li>
+<li>Great <a href="https://docs.djangoproject.com/en/dev/ref/templates/">Django template</a>
+ support</li>
+<li>Great <a href="http://daringfireball.net/projects/markdown/">Markdown</a> support with
+ <a href="http://fletcherpenney.net/multimarkdown/">multimarkdown</a></li>
+<li>Seems pretty fast, with nice &#8220;re-generate only what&#8217;s changed&#8221; (some bugs
+ though)</li>
+<li>Believe it or not, the Erlang site definition is actually pretty damn easy to
+ read and maintain</li>
+</ul>
+
+<p>The less-than-good:</p>
+
+<ul>
+<li>Documentation is pretty much non-existent</li>
+<li>Bug with re-generating content depending on template <code>extends</code> and
+ <code>includes</code> directives</li>
+<li>Would be nice to have a &#8220;watch&#8221; feature where the site is automatically
+ updated as underlying sources are changed</li>
+<li>Not sure how I can include content from within a markdown source (Sphinx has
+ this feature and it&#8217;s indispensable)</li>
+</ul>
+
+<h2 id="beingexplicit">Being Explicit</h2>
+
+<p>I&#8217;ve worked a lot with <a href="http://hyde.github.io">Hyde</a> &#8212; it&#8217;s a terrific static
+site generator written in Python. However, I&#8217;m routinely confused and surprised
+by what it does and have I have a hard time tracking down answers. It uses a
+lot of cleverness, which may be powerful in one respect, but it&#8217;s also hard to
+follow.</p>
+
+<p>LambdaPad has <a href="../examples/index.erl.html"><em>one</em> configuration file</a>, which
+defines the site structure and the data that feeds the generators.</p>
+
+<h2 id="djangotemplates">Django Templates</h2>
+
+<p>The
+<a href="https://docs.djangoproject.com/en/dev/ref/templates/">Django template language</a>
+is remarkably useful for defining site content. Just take a look at the
+templates used for this blog! With the <code>extends</code> tag you can defined
+base-level templates that provide overall site look-and-feel and structure and
+then customize each page as needed within that structure. With the <code>include</code>
+tag you can include template snippets. This is great for frequently used
+content that doesn&#8217;t appear in a base template &#8212; e.g. the &#8220;Recent Posts&#8221;
+section listed on this page an include.</p>
+
+<h2 id="multimarkdown">Multimarkdown</h2>
+
+<p>Multimarkdown is a very functional and fast markdown processor. Check out
+<a href="http://fletcherpenney.net/multimarkdown/features/">the feature list</a> &#8212; it&#8217;s
+all available (I think, well, at least the Markdown-to-HTML support) in
+LambdaPad!</p>
+
+<h2 id="smartcontentgeneration">Smart Content Generation</h2>
+
+<p>LambdaPad keeps track of sources that effect generated content. For the most
+part, this works very well &#8212; when you rebuild a site, content is generated
+only when the underlying sources have changed. This is pretty damn nice. And
+fast!</p>
+
+<p>LambdaPad does have a bug where it fails to track templates that are included
+or inherited from. So if you change a base template or an included snippet, you
+won&#8217;t get the right content re-generated. You can work around this of course by
+manually deleting the effected targets, but this is a pain and this bug should
+be fixed.</p>
+
+<h2 id="erlangsyntax">Erlang Syntax</h2>
+
+<p>Check out <a href="../examples/index.erl.html">the site definition for this blog</a> and
+judge for yourself!</p>
+
+<h2 id="thingstolookforwardto">Things To Look Forward To</h2>
+
+<p>LambdaPad is pretty function today, but it still has a ways to go. There are
+some bugs but those will get fixed if the Calculus has anything to say about
+it. Documentation will be a major effort, but that will fall into place (it&#8217;s
+pretty easy already to write a blog in LambdaPad &#8212; docs can&#8217;t be that far
+behind).</p>
+
+<p>I can imagine a feature where LambdaPad runs in a continual &#8220;watch&#8221; mode and
+just re-generates content immediately when something changes. This would be
+uber productive and stupendous and great.</p>
+
+<p>From the look of my own <code>index.erl</code> for this blog, I wonder if some of the
+syntax could possibly be improved. I know that functions can be used to express
+things clearly &#8212; and I&#8217;ve tried to do that &#8212; but I wonder how this will
+look to me over time. And when I&#8217;m drinking.</p>
+
+<p>Keep an eye out for complexity and weirdness. This approach to site generation
+could go horribly wrong if the LP authors aren&#8217;t careful. Keep it simple &#8212; as
+simple as possible!</p>
+
+    </div>
+    <div class="col-md-3">
+      <h3>Recent Posts</h3>
+      
+  
+    <table class="recent-posts">
+    
+      <tr>
+        <td style="white-space:nowrap">2014-08-09</td>
+        <td><a href="../posts/first-impressions.html">My First Impressions Of LambdaPad</a></td>
+      </tr>
+    
+      <tr>
+        <td style="white-space:nowrap">2014-08-08</td>
+        <td><a href="../posts/why-erlang.html">Why Erlang?</a></td>
+      </tr>
+    
+    </table>
+  
+
+
+    </div>
+  </div>
+</div>
+
+
+          </div>
+
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+  </body>
+</html>

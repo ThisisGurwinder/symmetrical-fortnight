@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My Life With LambdaPad</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tales of daily life using the amazing LambdaPad for my every site generating need.">
+    <meta name="author" content="">
+    <link href="../assets/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="../assets/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <div class="masthead">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="container">
+                  <ul class="nav">
+                    <li class="active"><a href="../index.html">Home</a></li>
+                    <li><a href="../posts/index.html">Posts</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div><!-- /.navbar -->
+          </div>
+
+          <div class="body">
+          
+<h1>index.erl</h1>
+<pre>-module(index).
+
+data(_) ->
+    #{
+      blog     => {eterm,    "blog.config"},
+      snippets => {markdown, "snippets/*.md"},
+      posts    => {markdown, "posts/*.md"}
+     }.
+
+site(Data) ->
+    #{
+      "site/index.html" =>
+          {template, "templates/index.html",
+           #{site_root => ""}},
+
+      "site/posts/index.html" =>
+          {template, "templates/posts.html",
+           #{site_root => "../"}},
+
+      "site/posts/{{post.id}}.html" =>
+          {template_map, "templates/post.html", {post, posts(Data)},
+           #{site_root => "../"}},
+
+      "site/examples/index.erl.html" =>
+          {template, "templates/example.html",
+           #{site_root => "../",
+             example_file => "index.erl"}},
+
+      "site/assets/*.css" =>
+          {files, "assets/*.css"}
+     }.
+
+posts(Data) -> plist:value(posts, Data).
+</pre>
+
+          </div>
+
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My Life With LambdaPad</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tales of daily life using the amazing LambdaPad for my every site generating need.">
+    <meta name="author" content="">
+    <link href="../assets/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="../assets/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <div class="masthead">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="container">
+                  <ul class="nav">
+                    <li class="active"><a href="../index.html">Home</a></li>
+                    <li><a href="../posts/index.html">Posts</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div><!-- /.navbar -->
+          </div>
+
+          <div class="body">
+          
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <h1>Why Erlang?</h1>
+      <p class="post-info">
+        2014-08-08 by Stan The Martian
+      </p>
+      <p>Every site generator seems to be written in Ruby, Python, or Node.js these
+days. Screw that. We want something <em>functional</em>. We want something
+<em>awesome</em>. So the Propositional Calculus <a href="#fn:1" id="fnref:1" title="see footnote" class="footnote">[1]</a> answered our prayers and gave us
+<em>LambdaPad</em>.</p>
+
+<p>There are a few principles that show up in this tool, which are inspired by
+patterns in function programming:</p>
+
+<ul>
+<li>Magic is a pariah &#8212; the goal is that behavior be up front and obvious</li>
+<li>Site data and structure is returned itself as data and is acted on by
+ LambdaPad &#8212; transformation and other actions are provided as needed, but
+ they&#8217;re not called directly by the site itself</li>
+</ul>
+
+<p>Of course, none of these require <em>Erlang</em>. They&#8217;re just principles and
+patterns.</p>
+
+<p>If you use LambdaPad, you&#8217;ll learn a little a little Erlang &#8212; in the same way
+you&#8217;ll learn a little Python if you use <a href="http://hyde.github.io">Hyde</a>. That&#8217;s a
+good thing. While LambdaPad is not a massively scalable server (heck, it
+doesn&#8217;t even spawn processes, yet &#8212; though parallel execution could be on the
+road map!) it&#8217;s a nice example of an Erlang application. If you&#8217;re inclined to
+dig deeper, your knowledge of Erlang will improve.</p>
+
+<p>That&#8217;s the idea.</p>
+
+<div class="footnotes">
+<hr />
+<ol>
+
+<li id="fn:1">
+<p>Refer to this video for more on the Calculus:
+ <p><iframe width="420" height="345"
+ src="https://www.youtube.com/embed/zY-IueSMAPc">
+ </iframe></p> <a href="#fnref:1" title="return to article" class="reversefootnote">&#160;&#8617;</a></p>
+</li>
+
+</ol>
+</div>
+
+
+    </div>
+    <div class="col-md-3">
+      <h3>Recent Posts</h3>
+      
+  
+    <table class="recent-posts">
+    
+      <tr>
+        <td style="white-space:nowrap">2014-08-09</td>
+        <td><a href="../posts/first-impressions.html">My First Impressions Of LambdaPad</a></td>
+      </tr>
+    
+      <tr>
+        <td style="white-space:nowrap">2014-08-08</td>
+        <td><a href="../posts/why-erlang.html">Why Erlang?</a></td>
+      </tr>
+    
+    </table>
+  
+
+
+    </div>
+  </div>
+</div>
+
+
+          </div>
+
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+  </body>
+</html>
